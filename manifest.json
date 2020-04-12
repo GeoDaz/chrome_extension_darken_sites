@@ -1,0 +1,25 @@
+{
+	"manifest_version": 2,
+
+	"name": "Darken all website",
+	"version": "1.0",
+	"description": "Alpha : Change sites CSS for reverse white and blacks colors",
+
+	"content_scripts": [
+		{
+			"matches": ["http://*/*", "https://*/*"],
+			"js": ["content.js", "setcss.js"],
+			"css": ["darkenstyle.css"],
+			"run_at": "document_end",
+			"all_frames": true
+		}
+	],
+	"web_accessible_resources": ["darkenstyle.css"],
+
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"browser_action": {},
+
+	"permissions": ["http://*/*", "https://*/*", "tabs"]
+}
